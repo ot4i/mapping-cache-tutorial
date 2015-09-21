@@ -1,0 +1,8 @@
+{    
+    "main" : 
+	{	
+      "project" : "LookupTable_UsingMappingGlobalCache",
+      "artefact": "LookupCountyFullName.msgflow",
+      "editor"  : "flow"
+    }
+}
