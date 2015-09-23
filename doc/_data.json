@@ -32,7 +32,7 @@
 	{
         "_common": 
 		{
-            "name": "Using a Mapping node to graphically access a Lookup table that is stored in the Global Cache",
+            "name": "(V10.0.0.2) Using a Mapping node to graphically access a Lookup table that is stored in the Global Cache",
             "shortDescription": "Learn how to use a Mapping node to graphically access a Lookup table that is stored in the Global Cache by exploring this simple example.",
             "durationText": "This tutorial takes approximately",
             "durationTime": "6 minutes",
@@ -71,6 +71,9 @@
                 "_overviewComment": "This tutorial demonstrates graphically accessing the Global Cache. It shows the use of a Mapping node to replace an abbreviated value in a message with an associated full name from a Lookup table that is held in the Global Cache. Another Mapping node shows the loading of the Lookup table.",
                 "sections": 
 				[
+                    {
+                        "section": "Note: This tutorial requires the IBM Integration Toolkit Version 10.0.0.2 or later and an integration node that is running IBM Integration Bus Version 10.0.0.2 or later."
+                    },
                     {
                         "section": "This tutorial demonstrates how to graphically access the Global Cache in a Mapping node by using the Cache Get and Cache Put transforms."
                     },
@@ -125,56 +128,47 @@
                 "overview": 
 				{
                     "name": "Create",
-                    "heading": "Import and Explore the application",
+                    "heading": "Import the application",
                     "_createComment": "A description of what will happen when the user clicks Import.",
                     "sections": 
                     [
                         {
-                            "section": "Click <span class='application'>Import</span> to import the application into your workspace."
+                            "section": "Click <span class='application'>Import</span> to import the application into your workspace. Note: You must have IBM Integration Toolkit Version 10.0.0.2 or later."
                         },
                         {
                             "section": "The <span class='application'>LookupTable_UsingMappingGlobalCache</span> application is now shown in the Application Development view of your workspace. The <span class='msgflow'>LookupCountyFullName</span> message flow is opened in the Message Flow editor."
                         },
                         {
-                            "section": "<span class='uicontrol'>The following optional steps help you explore and understand the application</span>"
-                        },
-                        {
-                            "section": "The <span class='msgflow'>LookupCountyFullName</span> message flow uses an HTTP Input node to receive a JSON message that contains a 'CountyAbbr' value. The 'CountyAbbr' value is used in the 'LookupCountyFullName' Mapping node to lookup the replacement full county name from the Global Cache.",
+                            "section": "The <span class='msgflow'>LookupCountyFullName</span> message flow contains a number of nodes:",
                             "steps": 
                              {
-                                "type": "ordered",
-                                "details": 
-                                [
-                                    {
-                                        "details": "Double click the 'LookupCountyFullName' Mapping node to open the associated Graphical Data Map that includes the 'Cache Get' transform."
-                                    },
-                                    {
-                                        "details": "Click the 'Cache Get' transform to review the mapping of the 'Key' that is used to select the entry in the Lookup table. Note: 'MapName' is set by using a user-defined property."
-                                    },
-                                    {
-                                        "details": "Click the up arrow to backup, then click the 'Cache Return' transform to review the mapping from the 'Value' that is returned from the Global Cache. Note: The 'Value' element is created only if an entry is found in the Global Cache."
-                                    },
-                                    {
-                                        "details": "Return to the message flow editor.<br/>The 'FoundCountyFullName' Route node checks for the presence of the 'CountyFullName' value:",
-                                        "substeps": 
-                                     {
-                                         "type": "unordered",
-                                         "details": 
-                                         [
-                                             {
-                                                 "details": "If the 'CountyFullName' value exists, the message is routed directly to the 'HTTP Reply' node."
-                                             },
-                                             {
-                                                 "details": "If the 'CountyFullName' value does not exist (for example, if the Lookup table in the Global Cache is not populated), the message is routed to the 'File Read' node. The 'File Read' node retrieves name-value pairs from a comma-separated-values file that is parsed by using a DFDL CSV model. The name-value data is passed to the 'LoadCache' Mapping node, where the data is loaded into a Lookup table in the Global Cache. The 'LoadCache' mapping node also sets the 'CountyFullName' value in the output message."
-                                             }
-                                         ]
-                                     }
-                                    },
-                                    {
-                                        "details": "Double click the 'LoadCache' Mapping node to open and explore the map and review the use of the 'Cache Put' transform within the 'For each' transform."
-                                    }
-                                ]
-                            }
+                                 "type":"unordered",
+                                 "details":
+                                 [
+                                  { 
+                                     "details":"<span class='uicontrol'>HTTP Input</span>: An Input node that receives an input message that contains an abbreviated county name."
+                                  },
+                                  { 
+                                     "details":"<span class='uicontrol'>LookupCountyFullName</span>: A Mapping node that accesses the global cache to interrogate the Lookup table for the full county name."
+                                  },
+                                  { 
+                                     "details":"<span class='uicontrol'>FoundCountyFullName</span>: A Route node that determines the path that the message should take depending on whether the full county name was retrieved from the global cache."
+                                  },
+                                  { 
+                                     "details":"<span class='uicontrol'>File Read</span>: A FileRead node that reads the file that contains the Lookup table data."
+                                  },
+                                  { 
+                                     "details":"<span class='uicontrol'>LoadCache</span>: A Mapping node that loads the Lookup table data into the global cache."
+                                  },
+                                  { 
+                                     "details":"<span class='uicontrol'>HTTP Reply</span>: A Reply node that returns a message that contains the full county name."
+                                  }
+                                 ]
+                             }
+                            
+                        },
+                        {
+                            "section": "You can explore the configuration of these nodes later in the tutorial."
                         }
                     ]
                 },
@@ -238,7 +232,7 @@
                                  [
                                   { 
                                      "name":"Enable the default Global Cache",
-                                     "details":"Enable the embedded global cache by using the following command:<br/><code>mqsichangebroker <span class='varname'>integrationNodeName</span> -b default</code><br/> where <span class='varname'>integrationNodeName</span> is the name of your integration node."
+                                     "details":"Enable the embedded global cache by running the following command from the command line or IBM Integration Console:<br/><code>mqsichangebroker <span class='varname'>integrationNodeName</span> -b default</code><br/> where <span class='userinput'><span class='varname'>integrationNodeName</span></span> is the name of your integration node and <span class='userinput'>default</span> is the name of your integration server. Note: The integration node must be running IBM Integration Bus Version 10.0.0.2 or later."
                                   },
                                   { 
                                      "name":"Setup the location of the lookup table initialization data file",
@@ -321,41 +315,72 @@
                                         "details": "Click the <span class='icon'>Send Message</span> icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' /> to select the first message to send to the flow."
                                     },
                                     {
-                                        "details": "Choose one of the input messages, e.g. 'Berks' and click <span class='uicontrol'>Send</span>.<br/>The request message is sent to the HTTP Input node, and the response message containing the full name, e.g. 'Berkshire' is received."
+                                        "details": "Select the 'Berks' input message, and click <span class='uicontrol'>Send</span>.<br/>The request message is sent to the HTTP Input node, and the response message containing the full name, 'Berkshire', is received."
                                     },
                                     {
-                                        "details": "Close the Send message dialog. <br/>The message path is automatically highlighted on the message flow. Note: The path is through the 'File Read' node and the 'LoadCache' Mapping node, because the Lookup table was not in the Global Cache."
+                                        "details": "Close the Send message dialog. <br/>The message path is automatically highlighted on the message flow. Note: The message path shows that the message was sent through the 'File Read' and 'LoadCache' Mapping nodes. Because the Lookup table was not in the Global Cache, the 'LookupCountyFullName' Mapping node cannot find a match."
                                     },
                                     {
-                                        "details": "Click on any connection to see the data that passed through that connection.<br/>Note: The input 'CountyFullName' is placed in the 'Environment' so that it is not overwritten by the data retrieved from the <span class='filepath'>'CountyAbbrNames.csv</span> file."
+                                        "details": "Click on any connection to see the data that passed through that connection."
                                     },
                                     {
-                                        "details": "Click the <span class='icon'>Send Message</span> icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' /> again, to select another message and send it to the flow by clicking <span class='uicontrol'>Send</span>."
+                                        "details": "Click the <span class='icon'>Send Message</span> icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' /> again, to select the 'Hants' message and send it to the flow by clicking <span class='uicontrol'>Send</span>."
                                     },
                                     {
-                                        "details": "Review the received message, close the Send message dialog to see the message path ."
+                                        "details": "Review the received message and close the Send message dialog to see the message path.<br/>Note: The message path shows that the message was sent directly to the 'HTTP Reply' node. Because the Lookup table is in the Global Cache, the 'LookupCountyFullName' Mapping node found a match and set the 'CountyFullName'."
                                     }
                                 ]
                             }
                         },
                         {
-                            "section": "Review the received message and the close the 'Send message' dialog.",
-                             "steps": 
+                            "section": "If you restart the integration node, or issue a <span class='cmdname'>mqsicacheadmin</span> command to clear the Global Cache, the next message is sent through the 'File Read' and 'LoadCache' Mapping nodes again."
+                        },
+                        {
+                            "section": "<span class='uicontrol'>The following optional steps help you explore and understand the application</span>"
+                        },
+                        {
+                            "section": "The <span class='msgflow'>LookupCountyFullName</span> message flow uses an HTTP Input node to receive a JSON message that contains a 'CountyAbbr' value. The 'CountyAbbr' value is used in the 'LookupCountyFullName' Mapping node to lookup the replacement full county name from the Global Cache.",
+                            "steps": 
                              {
                                 "type": "ordered",
                                 "details": 
                                 [
                                     {
-                                        "details": "Click on any connection to see the data that passed through that connection."
+                                        "details": "Double click the 'LookupCountyFullName' Mapping node to open the associated Graphical Data Map that includes the 'Cache Get' transform."
                                     },
                                     {
-                                        "details": "Note that the message path highlighted the message flow is now directly to the 'HTTP Reply' node since the Lookup table is now held in the Global Cache and the 'LookupCountyFullName' Mapping node will be able to get a match and set the 'CountyFullName' directly without having to go back to the file."
+                                        "details": "Click the 'Local map' to enter the nested mapping. Note: The value for the input element, 'CountyAbbr', is placed in the 'Environment' so that it is not overwritten by the data that is retrieved from the <span class='filepath'>'CountyAbbrNames.csv</span> file."
+                                    },
+                                    {
+                                        "details": "Click the 'Cache Get' transform to enter the nested mapping for the transform and review the mapping of the 'Key' that is used to select the entry in the Lookup table. Note: 'MapName' is set by using a CustomXPath transform to configure a user-defined property."
+                                    },
+                                    {
+                                        "details": "Click the up arrow <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/exitNestedMapping.png' alt='' /> to exit the nested mapping, then click the 'Cache Return' transform to enter the nested mapping for the transform and review the mapping from the 'Value' that is returned from the Global Cache."
+                                    },
+                                    {
+                                        "details": "Click the 'Move' transform and view the Condition tab in the Properties, to see that the 'Value' element is created only if an entry is found in the Global Cache."
+                                    },
+                                    {
+                                        "details": "Return to the message flow editor.<br/>The 'FoundCountyFullName' Route node checks for the presence of the 'CountyFullName' value:",
+                                        "substeps": 
+                                     {
+                                         "type": "unordered",
+                                         "details": 
+                                         [
+                                             {
+                                                 "details": "If the 'CountyFullName' value exists, the message is routed directly to the 'HTTP Reply' node."
+                                             },
+                                             {
+                                                 "details": "If the 'CountyFullName' value does not exist (for example, if the Lookup table in the Global Cache is not populated), the message is routed to the 'File Read' node. The 'File Read' node retrieves name-value pairs from a comma-separated-values file that is parsed by using a DFDL CSV model. The name-value data is passed to the 'LoadCache' Mapping node, where the data is loaded into a Lookup table in the Global Cache. The 'LoadCache' mapping node also sets the 'CountyFullName' value in the output message."
+                                             }
+                                         ]
+                                     }
+                                    },
+                                    {
+                                        "details": "Double click the 'LoadCache' Mapping node to open and explore the map and review the use of the 'Cache Put' transform within the 'For each' transform. Note: The value of 'CountyFullName' for the current lookup request is taken directly from the data that is read from the comma-separated-values file."
                                     }
-                                 ]
-                             }
-                        },
-                        {
-                            "section": "If you restart the Integration node or issue a <span class='uicontrol'>mqsicacheadmin</span> command to clear the Global Cache the next message sent will again take a path via the 'File Read' and 'LoadCache' Mapping node."
+                                ]
+                            }
                         }
                     ]
                 },
@@ -392,5 +417,3 @@
         }
     }
 }
-
-
