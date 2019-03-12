@@ -333,7 +333,7 @@
                             }
                         },
                         {
-                            "section": "If you restart the integration node or intergration server, or issue a <span class='cmdname'>mqsicacheadmin</span> command to clear the Global Cache, the next message is sent through the 'File Read' and 'LoadCache' Mapping nodes again."
+                            "section": "If you restart the integration node or integration server, or issue a <span class='cmdname'>mqsicacheadmin</span> command to clear the Global Cache, the next message is sent through the 'File Read' and 'LoadCache' Mapping nodes again."
                         },
                         {
                             "section": "<span class='uicontrol'>The following optional steps help you explore and understand the application</span>"
