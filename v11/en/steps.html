@@ -24,13 +24,13 @@
 		
 		<title>IBM Integration Bus V10 Tutorial</title>
 
-    	<link rel="stylesheet" href="http://ot4i.github.io/iib-tutorials/css/main.css" />
-		<link rel="stylesheet" href="http://ot4i.github.io/iib-tutorials/css/app.css" />
+    	<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/main.css" />
+		<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/app.css" />
     	
-		<script src="http://ot4i.github.io/iib-tutorials/js/json2.js"></script>
-		<script src="http://ot4i.github.io/iib-tutorials/js/js2java.js"></script>
-		<script src="http://ot4i.github.io/iib-tutorials/js/js2java_steps.js"></script>
-		<script src="http://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/json2.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java_steps.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
 	</head>
 <!-- header::End -->
 <!-- body::Start -->
@@ -43,7 +43,7 @@
 	</div>
 	<div class="row">
 	  <div class="small-9 medium-9 large-9 columns">
-	    <h4 class="title">(V10.0.0.2) Using a Mapping node to graphically access a Lookup table that is stored in the Global Cache <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
+	    <h4 class="title">(V11.0.0.4) Using a Mapping node to graphically access a Lookup table that is stored in the Global Cache <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
 	  </div>
 	  <div class="small-3 medium-3 large-3 columns">
 		<a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm')" class="small right helplink">IBM Knowledge Center</a> 
@@ -82,7 +82,7 @@
 					      	<h4>Import the application</h4>
 					        
 						    
-								<p> Click <span class="application">Import</span> to import the application into your workspace. Note: You must have IBM Integration Toolkit Version 10.0.0.2 or later. </p>
+								<p> Click <span class="application">Import</span> to import the application into your workspace. Note: You must have IBM App Connect Enterprise Toolkit Version 11.0.0.4 or later. </p>
 								
 							
 								<p> The <span class="application">LookupTable_UsingMappingGlobalCache</span> application is now shown in the Application Development view of your workspace. The <span class="msgflow">LookupCountyFullName</span> message flow is opened in the Message Flow editor. </p>
@@ -161,7 +161,7 @@
 					<div class="small-2 medium-2 large-2 columns">
 					
 					
-					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('MainFlow')"> Import <img class="icon-image" src="http://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('MainFlow')"> Import <img class="icon-image" src="https://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
 										
 				    </div>
 					
@@ -181,7 +181,7 @@
 									<ol>
 									
 									
-										<li> Enable the embedded global cache by running the following command from the command line or IBM Integration Console:<br><code>mqsichangebroker <span class="varname">integrationNodeName</span> -b default</code><br> where <span class="userinput"><span class="varname">integrationNodeName</span></span> is the name of your integration node and <span class="userinput">default</span> is the name of your integration server. Note: The integration node must be running IBM Integration Bus Version 10.0.0.2 or later.
+										<li> Enable the embedded global cache by using the basic_1_catalog_1_container\server.conf.yaml found in the server\Samples\globalcache directory and following the instructions in this directory. Note: The integration node or server must be running IBM App Connect Enterprise Version 11.0.0.4 or later.
 										
 										</li>
 									
@@ -251,11 +251,11 @@
 									<ol>
 									
 									
-										<li> Click the <span class="icon">Flow Exerciser</span> icon <img src="http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png" alt> to start recording the message path through the flow.
+										<li> Click the <span class="icon">Flow Exerciser</span> icon <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png" alt> to start recording the message path through the flow.
 										
 										</li>
 									
-										<li> Click the <span class="icon">Send Message</span> icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png" alt> to select the first message to send to the flow.
+										<li> Click the <span class="icon">Send Message</span> icon <img src="https://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png" alt> to select the first message to send to the flow.
 										
 										</li>
 									
@@ -271,7 +271,7 @@
 										
 										</li>
 									
-										<li> Click the <span class="icon">Send Message</span> icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png" alt> again, to select the 'Hants' message and send it to the flow by clicking <span class="uicontrol">Send</span>.
+										<li> Click the <span class="icon">Send Message</span> icon <img src="https://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png" alt> again, to select the 'Hants' message and send it to the flow by clicking <span class="uicontrol">Send</span>.
 										
 										</li>
 									
@@ -284,7 +284,7 @@
 									
 								
 							
-								<p> If you restart the integration node, or issue a <span class="cmdname">mqsicacheadmin</span> command to clear the Global Cache, the next message is sent through the 'File Read' and 'LoadCache' Mapping nodes again. </p>
+								<p> If you restart the integration node or integration server, or issue a <span class="cmdname">mqsicacheadmin</span> command to clear the Global Cache, the next message is sent through the 'File Read' and 'LoadCache' Mapping nodes again. </p>
 								
 							
 								<p> <span class="uicontrol">The following optional steps help you explore and understand the application</span> </p>
@@ -309,7 +309,7 @@
 										
 										</li>
 									
-										<li> Click the up arrow <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/exitNestedMapping.png" alt> to exit the nested mapping, then click the 'Cache Return' transform to enter the nested mapping for the transform and review the mapping from the 'Value' that is returned from the Global Cache.
+										<li> Click the up arrow <img src="https://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/exitNestedMapping.png" alt> to exit the nested mapping, then click the 'Cache Return' transform to enter the nested mapping for the transform and review the mapping from the 'Value' that is returned from the Global Cache.
 										
 										</li>
 									
@@ -370,7 +370,7 @@
 					
 					
 					
-					<h4 class="tkaction"><a href="javascript:;" onclick="cleanUp()" title="Clean up and remove any changes in your workspace made by the tutorial."> Clean Up <img class="icon-image" src="http://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/close-cancel-error_128-red.png"></a></h4>
+					<h4 class="tkaction"><a href="javascript:;" onclick="cleanUp()" title="Clean up and remove any changes in your workspace made by the tutorial."> Clean Up <img class="icon-image" src="https://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/close-cancel-error_128-red.png"></a></h4>
 				    
 					
 				    </div>
@@ -379,9 +379,9 @@
 			</div> <!-- tab-content -->
 		</div> <!-- columns -->
 	  </div> <!-- row --></body>
-		<script src="http://ot4i.github.io/iib-tutorials/js/vendor/jquery.js"></script>
-		<script src="http://ot4i.github.io/iib-tutorials/js/vendor/foundation.min.js"></script>
-		<script src="http://ot4i.github.io/iib-tutorials/js/main.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/jquery.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/foundation.min.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/main.js"></script>
 	</body>
 <!-- body::End -->
 
