@@ -32,7 +32,7 @@
 	{
         "_common": 
 		{
-            "name": "(V10.0.0.2) Using a Mapping node to graphically access a Lookup table that is stored in the Global Cache",
+            "name": "(V11.0.0.4) Using a Mapping node to graphically access a Lookup table that is stored in the Global Cache",
             "shortDescription": "Learn how to use a Mapping node to graphically access a Lookup table that is stored in the Global Cache by exploring this simple example.",
             "durationText": "This tutorial takes approximately",
             "durationTime": "6 minutes",
@@ -58,11 +58,11 @@
                 }
             ],
             "outcomesName": "Learning outcomes",
-            "_outcomesComment": "Use IBM Integration Bus Mapping node Cache Get and Cache Put transforms to graphically access and load a Lookup table stored in the Global Cache.",
+            "_outcomesComment": "Use IBM App Connect Enterprise Mapping node Cache Get and Cache Put transforms to graphically access and load a Lookup table stored in the Global Cache.",
             "outcomeList": 
 			[
                 {
-                    "title": "Use IBM Integration Bus to graphically access a Lookup table stored in the Global Cache using a Mapping node."
+                    "title": "Use IBM App Connect Enterprise to graphically access a Lookup table stored in the Global Cache using a Mapping node."
                 }
             ],
             "summary": 
@@ -72,7 +72,7 @@
                 "sections": 
 				[
                     {
-                        "section": "Note: This tutorial requires the IBM Integration Toolkit Version 10.0.0.2 or later and an integration node that is running IBM Integration Bus Version 10.0.0.2 or later."
+                        "section": "Note: This tutorial requires the IBM App Connect Enterprise Toolkit Version 11.0.0.4 or later and an integration node or integration server that is running IBM App Connect Enterprise Version 11.0.0.4 or later."
                     },
                     {
                         "section": "This tutorial demonstrates how to graphically access the Global Cache in a Mapping node by using the Cache Get and Cache Put transforms."
@@ -84,7 +84,7 @@
                         "section": "Another Mapping node demonstrates the use of a Cache Put transform to populate a Lookup table in the Global Cache with data that is read from a comma-separated-values file."
                     },
                     {
-                        "section": "In IBM Integration Bus, message flows can be used to transform and enrich input data structures into output data structures. Several transformation options are provided including a Mapping node, which allows the transformation and enrichment to be completed graphically. The Global Cache is a repository for data that you want to reuse regularly. The Mapping node can get, put, and remove data from the Global Cache."
+                        "section": "In IBM App Connect Enterprise, message flows can be used to transform and enrich input data structures into output data structures. Several transformation options are provided including a Mapping node, which allows the transformation and enrichment to be completed graphically. The Global Cache is a repository for data that you want to reuse regularly. The Mapping node can get, put, and remove data from the Global Cache."
                     }
                 ]
             },
@@ -133,7 +133,7 @@
                     "sections": 
                     [
                         {
-                            "section": "Click <span class='application'>Import</span> to import the application into your workspace. Note: You must have IBM Integration Toolkit Version 10.0.0.2 or later."
+                            "section": "Click <span class='application'>Import</span> to import the application into your workspace. Note: You must have IBM App Connect Enterprise Toolkit Version 11.0.0.4 or later."
                         },
                         {
                             "section": "The <span class='application'>LookupTable_UsingMappingGlobalCache</span> application is now shown in the Application Development view of your workspace. The <span class='msgflow'>LookupCountyFullName</span> message flow is opened in the Message Flow editor."
@@ -232,7 +232,7 @@
                                  [
                                   { 
                                      "name":"Enable the default Global Cache",
-                                     "details":"Enable the embedded global cache by running the following command from the command line or IBM Integration Console:<br/><code>mqsichangebroker <span class='varname'>integrationNodeName</span> -b default</code><br/> where <span class='userinput'><span class='varname'>integrationNodeName</span></span> is the name of your integration node and <span class='userinput'>default</span> is the name of your integration server. Note: The integration node must be running IBM Integration Bus Version 10.0.0.2 or later."
+                                     "details":"Enable the embedded global cache by using the basic_1_catalog_1_container\\server.conf.yaml found in the server\\Samples\\globalcache directory and following the instructions in this directory. Note: The integration node or server must be running IBM App Connect Enterprise Version 11.0.0.4 or later."
                                   },
                                   { 
                                      "name":"Setup the location of the lookup table initialization data file",
@@ -333,7 +333,7 @@
                             }
                         },
                         {
-                            "section": "If you restart the integration node, or issue a <span class='cmdname'>mqsicacheadmin</span> command to clear the Global Cache, the next message is sent through the 'File Read' and 'LoadCache' Mapping nodes again."
+                            "section": "If you restart the integration node or integration server, or issue a <span class='cmdname'>mqsicacheadmin</span> command to clear the Global Cache, the next message is sent through the 'File Read' and 'LoadCache' Mapping nodes again."
                         },
                         {
                             "section": "<span class='uicontrol'>The following optional steps help you explore and understand the application</span>"
