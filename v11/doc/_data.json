@@ -241,7 +241,7 @@
                                       "details": "<code>cd workspace_global_cache</code>"
                                   },
                                   {
-                                      "details": "Copy <code>basic_1_catalog_1_container\\server.conf.yaml</code> yaml snippet into the <code>server.conf.yaml</code> replacing the GlobalCache section in the ResourceManagers section"
+                                      "details": "Copy <code>basic_1_catalog_1_container\\server.conf.yaml</code> snippet into the <code>server.conf.yaml</code> replacing the GlobalCache section in the ResourceManagers section"
                                   },
                                   {
                                       "details": "Start the Integration Server using:  <code>IntegrationServer --name GLOBAL_CACHE_SERVER --work-dir workspace_global_cache</code> When started <code>GLOBAL_CACHE_SERVER</code> will be both a catalog server and a container server. Note: Integration server must be running IBM App Connect Enterprise Version 11.0.0.4 or later."
