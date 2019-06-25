@@ -232,7 +232,7 @@
                                  [
                                   { 
                                      "name":"Enable the default Global Cache",
-                                     "details":"Enable the embedded global cache by using the <code>basic_1_catalog_1_container\\server.conf.yaml</code> found in the <code>ace-install-directory\\server\\sample\\globalcache</code> directory and following the instructions in this directory. Note: The integration node or server must be running IBM App Connect Enterprise Version 11.0.0.4 or later."
+                                     "details":"Enable the embedded global cache by copying the GlobalCache entry in the <code>basic_1_catalog_1_container\\server.conf.yaml</code> found in the <code>ace-install-directory\\server\\sample\\globalcache</code> directory into your integration server server.conf.yaml file and following the instructions in this directory. Note: The integration node or server must be running IBM App Connect Enterprise Version 11.0.0.4 or later."
                                   },
                                   { 
                                      "name":"Setup the location of the lookup table initialization data file",
