@@ -253,7 +253,10 @@
                                   },
                                   { 
                                      "name":"Copy the lookup table initialization data file",
-                                     "details":"Copy the <span class='filepath'>CountyAbbrNames.csv</span> file from the 'Other Resources' folder in the <span class='application'>LookupTable_UsingMappingGlobalCache</span> application to the input directory."
+                                     "details":"Copy the <span class='filepath'>CountyAbbrNames.csv</span> file from the 'Other Resources' folder in the <span class='application'>LookupTable_UsingMappingGlobalCache</span> application to the input directory that you created in step 2."
+                                  },
+								  { 
+                                     "details":"Drag and drop deploy the shared library <span class='application'>LookupTableCSVdata</span> on to your integration server."
                                   }
                                  ]
                              }
@@ -328,7 +331,7 @@
                             }
                         },
                         {
-                            "section": "If you restart the integration node or integration server, or issue a <span class='cmdname'>mqsicacheadmin</span> command to clear the Global Cache, the next message is sent through the 'File Read' and 'LoadCache' Mapping nodes again."
+                            "section": "If you restart the integration node or integration server, or issue a <span class='cmdname'>mqsicacheadmin</span> command to clear the Global Cache, the next message is sent through the 'File Read' and 'LoadCache' Mapping nodes again. (For example: <code>mqsicacheadmin --admin-host localhost --admin-port 7600 -c clearGrid -m CountyAbbrNames</code>)"
                         },
                         {
                             "section": "<span class='uicontrol'>The following optional steps help you explore and understand the application</span>"
