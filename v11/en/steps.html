@@ -15,14 +15,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<meta name="copyright" content="Copyright IBM Corporation 2014" />
-		<meta name="abstract" content="IBM Integration Bus V10 Tutorial">
+		<meta name="abstract" content="IBM App Connect Enterprise V11 Tutorial">
 		<meta name="author" content="IBM">
-		<meta name="description" content="IBM Integration Bus V10 Tutorial">
+		<meta name="description" content="IBM App Connect Enterprise V11 Tutorial">
 		<meta name="keywords" content="keywords" > 
 		<meta name="robots" content="index,follow">
-		<meta name="source" content="IBM Integration Bus V10 Tutorial" /> 
+		<meta name="source" content="IBM App Connect Enterprise V11 Tutorial" /> 
 		
-		<title>IBM Integration Bus V10 Tutorial</title>
+		<title>IBM App Connect Enterprise V11 Tutorial</title>
 
     	<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/main.css" />
 		<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/app.css" />
@@ -202,7 +202,11 @@
 										
 										</li>
 									
-										<li> Copy the <span class="filepath">CountyAbbrNames.csv</span> file from the 'Other Resources' folder in the <span class="application">LookupTable_UsingMappingGlobalCache</span> application to the input directory.
+										<li> Copy the <span class="filepath">CountyAbbrNames.csv</span> file from the 'Other Resources' folder in the <span class="application">LookupTable_UsingMappingGlobalCache</span> application to the input directory that you created in step 2.
+										
+										</li>
+									
+										<li> Drag and drop deploy the shared library <span class="application">LookupTableCSVdata</span> on to your integration server.
 										
 										</li>
 									
@@ -246,11 +250,11 @@
 									<ol>
 									
 									
-										<li> Click the <span class="icon">Flow Exerciser</span> icon <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png" alt> to start recording the message path through the flow.
+										<li> Click the <span class="icon">Flow Exerciser</span> icon <img src="http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png" alt> to start recording the message path through the flow.
 										
 										</li>
 									
-										<li> Click the <span class="icon">Send Message</span> icon <img src="https://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png" alt> to select the first message to send to the flow.
+										<li> Click the <span class="icon">Send Message</span> icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png" alt> to select the first message to send to the flow.
 										
 										</li>
 									
@@ -266,7 +270,7 @@
 										
 										</li>
 									
-										<li> Click the <span class="icon">Send Message</span> icon <img src="https://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png" alt> again, to select the 'Hants' message and send it to the flow by clicking <span class="uicontrol">Send</span>.
+										<li> Click the <span class="icon">Send Message</span> icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png" alt> again, to select the 'Hants' message and send it to the flow by clicking <span class="uicontrol">Send</span>.
 										
 										</li>
 									
@@ -279,7 +283,7 @@
 									
 								
 							
-								<p> If you restart the integration node or integration server, or issue a <span class="cmdname">mqsicacheadmin</span> command to clear the Global Cache, the next message is sent through the 'File Read' and 'LoadCache' Mapping nodes again. </p>
+								<p> If you restart the integration node or integration server, or issue a <span class="cmdname">mqsicacheadmin</span> command to clear the Global Cache, the next message is sent through the 'File Read' and 'LoadCache' Mapping nodes again. (For example: <code>mqsicacheadmin --admin-host localhost --admin-port 7600 -c clearGrid -m CountyAbbrNames</code>) </p>
 								
 							
 								<p> <span class="uicontrol">The following optional steps help you explore and understand the application</span> </p>
@@ -304,7 +308,7 @@
 										
 										</li>
 									
-										<li> Click the up arrow <img src="https://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/exitNestedMapping.png" alt> to exit the nested mapping, then click the 'Cache Return' transform to enter the nested mapping for the transform and review the mapping from the 'Value' that is returned from the Global Cache.
+										<li> Click the up arrow <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/exitNestedMapping.png" alt> to exit the nested mapping, then click the 'Cache Return' transform to enter the nested mapping for the transform and review the mapping from the 'Value' that is returned from the Global Cache.
 										
 										</li>
 									
