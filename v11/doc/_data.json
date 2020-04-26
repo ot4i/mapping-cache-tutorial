@@ -41,7 +41,7 @@
             "helpLink": 
 			{
                 "text": "IBM Knowledge Center",
-                "link": "/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm"
+           		"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm"
             }
         },
         "pageDetails": 
@@ -97,26 +97,26 @@
 					{
 						"title": "Knowledge Center link to ",
 						"description": "Developing integration solutions from scratch",
-						"link": "com.ibm.etools.mft.doc/bi12002_.htm",
-						"type": "help"
+						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+						"type": "web"
 					},
 					{
 						"title": "Knowledge Center link to ",
 						"description": "Data caching overview",
-						"link": "com.ibm.etools.mft.doc/bn23730_.htm",
-						"type": "help"
+						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bn23730_.htm",
+						"type": "web"
 					},
 					{
 						"title": "Knowledge Center link to ",
 						"description": "Accessing a global cache by using a Mapping node",
-						"link": "com.ibm.etools.mft.doc/br26101_.htm",
-						"type": "help"
+						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/br26101_.htm",
+						"type": "web"
 					},
 					{
 						"title": "Knowledge Center link to ",
 						"description": "Global cache scenario: Caching static data",
-						"link": "com.ibm.etools.mft.doc/bn23732_.htm",
-						"type": "help"
+						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bn23732_.htm",
+						"type": "web"
 					}
 				]
 			}
@@ -180,25 +180,26 @@
                         {
                             "title": "Knowledge Center link to ",
                             "description": "Developing integration solutions from scratch",
-                            "link": "com.ibm.etools.mft.doc/bi12002_.htm"
+                            "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+							"type": "web"
                         },
                         {
                              "title": "Knowledge Center link to ",
                              "description": "Data caching overview",
-                             "link": "com.ibm.etools.mft.doc/bn23730_.htm",
-                             "type": "help"
+                             "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bn23730_.htm",
+                             "type": "web"
                         },
                         {
                              "title": "Knowledge Center link to ",
                              "description": "Accessing a global cache by using a Mapping node",
-                             "link": "com.ibm.etools.mft.doc/br26101_.htm",
-                             "type": "help"
+                             "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/br26101_.htm",
+                             "type": "web"
                         },
                         {
                              "title": "Knowledge Center link to ",
                              "description": "Accessing user-defined properties from a Mapping node",
-                             "link": "com.ibm.etools.mft.doc/br34267_.htm",
-                             "type": "help"
+                             "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/br34267_.htm",
+                             "type": "web"
                         }
                     ]
                 },
@@ -274,7 +275,8 @@
                         {
                             "title": "Knowledge Center link to ",
                             "description": "FileRead node",
-                            "link": "com.ibm.etools.mft.doc/bc34090_.htm"
+                            "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bc34090_.htm",
+							"type": "web"
                         }
                     ]
                 },
@@ -390,27 +392,17 @@
                         {
                             "title": "Knowledge Center link to ",
                             "description": "Testing your message flow by using the Flow exerciser",
-                            "link": "com.ibm.etools.mft.doc/rt26110_.htm"
+                            "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/rt26110_.htm",
+							"type": "web"
                         },
                         {
                             "title": "Knowledge Center link to ",
                             "description": "mqsicacheadmin command",
-                            "link": "com.ibm.etools.mft.doc/bn23783_.htm"
+                            "link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bn23783_.htm",
+							"type": "web"
                         }
                     ]
-                },
-				"exits": 
-				{
-					"title": "Run Exits",
-					"details": 
-					[
-						{
-							"name": "Clean Up",
-							"description": "Clean up and remove any changes in your workspace made by the tutorial.",
-							"method": "cleanUp()"
-						}
-					]
-				}
+                }
             }
         }
     }
