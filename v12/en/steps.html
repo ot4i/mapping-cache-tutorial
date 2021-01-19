@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ 
+	
+<!-- header::Start -->
+	<head>
+		<!-- Use Internet Explorer 9 Standards mode for Eclipse Browser Control - https://www.eclipse.org/swt/faq.php#browsernativeie and https://msdn.microsoft.com/en-us/library/jj676915%28v=vs.85%29.aspx -->
+  		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		
+		<!-- Next 2 http=equiv headers required to disable caching the Eclipse Browser Widget -->
+		<meta http-equiv="Pragma" content="no-cache">
+  		<meta http-equiv="Expires" content="-1">
+
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="copyright" content="Copyright IBM Corporation 2014" />
+		<meta name="abstract" content="IBM App Connect Enterprise V11 Tutorial">
+		<meta name="author" content="IBM">
+		<meta name="description" content="IBM App Connect Enterprise V11 Tutorial">
+		<meta name="keywords" content="keywords" > 
+		<meta name="robots" content="index,follow">
+		<meta name="source" content="IBM App Connect Enterprise V11 Tutorial" /> 
+		
+		<title>IBM App Connect Enterprise V11 Tutorial</title>
+
+    	<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/main.css" />
+		<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/app.css" />
+    	
+		<script src="https://ot4i.github.io/iib-tutorials/js/json2.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java_steps.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
+	</head>
+<!-- header::End -->
+<!-- body::Start -->
+		<body>
+  	<!-- body content here -->
+	<div class="row">
+	  <div class="small-12 medium-12 large-12 columns">
+	    <p> </p>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="small-9 medium-9 large-9 columns">
+	    <h4 class="title">(V11.0.0.4) Using a Mapping node to graphically access a Lookup table that is stored in the Global Cache <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
+	  </div>
+	  <div class="small-3 medium-3 large-3 columns">
+		<a href="javascript:;" onclick="openExternalBrowser('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm')" class="small right helplink">IBM Knowledge Center</a> 
+	  </div>
+	</div> 
+	<hr>
+	<div class="row">
+		<div class="small-10 medium-10 large-10 columns">
+		<h5> Learn how to use a Mapping node to graphically access a Lookup table that is stored in the Global Cache by exploring this simple example. </h5>
+		</div>
+		<div class="small-2 medium-2 large-2 columns">
+			<button class="small radius button right" tabindex="0" id="backToGallery" onclick="backToGallery()"> Back To Gallery
+			</button>
+		</div>
+	</div>
+	<div class="row">          
+		  <div class="small-12 medium-12 large-12 columns">
+			<ul class="tabs vertical"> 
+				<li class="tab-title tab-title-small active">
+				  <a href="javascript:;" onclick="show('panel21')">Create</a> 
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="javascript:;" onclick="show('panel31')">Prepare</a> 
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="javascript:;" onclick="show('panel41')">Run</a> 
+				</li>
+			</ul>
+			<!-- editing -->
+			<div class="tabs-content panel-thin-blue vertical"> 
+		    	<div class="content active" id="panel21">
+		    		
+		    		<div class="small-10 medium-10 large-10 columns divider">
+					
+				      	<div class="row content-details">
+					      	<h4>Import the application</h4>
+					        
+						    
+								<p> Click <span class="application">Import</span> to import the application into your workspace. Note: You must have IBM App Connect Enterprise Toolkit Version 11.0.0.4 or later. </p>
+								
+							
+								<p> The <span class="application">LookupTable_UsingMappingGlobalCache</span> application is now shown in the Application Development view of your workspace. The <span class="msgflow">LookupCountyFullName</span> message flow is opened in the Message Flow editor. </p>
+								
+							
+								<p> The <span class="msgflow">LookupCountyFullName</span> message flow contains a number of nodes: </p>
+								
+								
+									
+									<ul>
+									
+									
+										<li> <span class="uicontrol">HTTP Input</span>: An Input node that receives an input message that contains an abbreviated county name.
+										
+										</li>
+									
+										<li> <span class="uicontrol">LookupCountyFullName</span>: A Mapping node that accesses the global cache to interrogate the Lookup table for the full county name.
+										
+										</li>
+									
+										<li> <span class="uicontrol">FoundCountyFullName</span>: A Route node that determines the path that the message should take depending on whether the full county name was retrieved from the global cache.
+										
+										</li>
+									
+										<li> <span class="uicontrol">File Read</span>: A FileRead node that reads the file that contains the Lookup table data.
+										
+										</li>
+									
+										<li> <span class="uicontrol">LoadCache</span>: A Mapping node that loads the Lookup table data into the global cache.
+										
+										</li>
+									
+										<li> <span class="uicontrol">HTTP Reply</span>: A Reply node that returns a message that contains the full county name.
+										
+										</li>
+									
+									
+									</ul>
+									
+								
+							
+								<p> You can explore the configuration of these nodes later in the tutorial. </p>
+								
+							
+						</div>
+						
+						<div class="row content-details">
+							<h4>Find out more</h4>
+							<ul>
+							
+								
+								
+								<li> <a href="javascript:;" onclick="openExternalBrowser('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to  Developing integration solutions from scratch">Developing integration solutions from scratch</a> </li>
+									
+							
+								
+								
+								<li> <a href="javascript:;" onclick="openExternalBrowser('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bn23730_.htm')" title="Knowledge Center link to  Data caching overview">Data caching overview</a> </li>
+									
+							
+								
+								
+								<li> <a href="javascript:;" onclick="openExternalBrowser('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/br26101_.htm')" title="Knowledge Center link to  Accessing a global cache by using a Mapping node">Accessing a global cache by using a Mapping node</a> </li>
+									
+							
+								
+								
+								<li> <a href="javascript:;" onclick="openExternalBrowser('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/br34267_.htm')" title="Knowledge Center link to  Accessing user-defined properties from a Mapping node">Accessing user-defined properties from a Mapping node</a> </li>
+									
+							
+							</ul>
+						</div>
+						
+					</div>
+					
+					<div class="small-2 medium-2 large-2 columns">
+					
+					
+					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('MainFlow')"> Import <img class="icon-image" src="https://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+										
+				    </div>
+					
+		    	</div>
+		    	<div class="content" id="panel31">
+					
+					<div class="small-12 medium-12 large-12 columns">
+					
+						<div class="row content-details">
+						  	<h4>Preparing to run the application</h4>
+						    
+						    
+								<p> Perform the following steps to prepare your environment to run the <span class="application">LookupTable_UsingMappingGlobalCache</span> application. </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> Enable the embedded global cache by copying the GlobalCache entry in the <code>basic_1_catalog_1_container\server.conf.yaml</code> found in the <code>ace-install-directory\server\sample\globalcache</code> directory into your integration server server.conf.yaml file and following the instructions in this directory. Note: The integration node or server must be running IBM App Connect Enterprise Version 11.0.0.4 or later.
+										
+										</li>
+									
+										<li> Setup the location of the lookup table initialization data file by completing one of the following steps:
+										
+										
+											
+											<ul>
+											
+												
+													<li> On Windows: Create the input directory <code>C:\temp</code>.</li>
+												
+													<li> On Linux: Change the Input directory property of the 'File Read' node to a Linux path.</li>
+												
+											
+											</ul>
+											
+										
+										</li>
+									
+										<li> Copy the <span class="filepath">CountyAbbrNames.csv</span> file from the 'Other Resources' folder in the <span class="application">LookupTable_UsingMappingGlobalCache</span> application to the input directory that you created in step 2.
+										
+										</li>
+									
+										<li> Drag and drop deploy the shared library <span class="application">LookupTableCSVdata</span> on to your integration server.
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+								<p> Next you will use the Flow exerciser to send HTTP requests to the message flow. </p>
+								
+							
+						</div>
+						
+						<div class="row content-details">
+							<h4>Find out more</h4>
+							<ul>
+							
+								
+								
+								<li> <a href="javascript:;" onclick="openExternalBrowser('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bc34090_.htm')" title="Knowledge Center link to  FileRead node">FileRead node</a> </li>
+									
+							
+							</ul>
+						</div>
+							
+					</div>
+					
+		    	</div>
+		    	<div class="content" id="panel41">
+		    		
+					<div class="small-12 medium-12 large-12 columns">
+					
+				    	<div class="row content-details">
+					      	<h4>Follow these steps to run the application</h4>
+					        
+						    
+								<p> Open the <span class="uicontrol">LookupCountyFullName</span> message flow from the application and complete the following steps: </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> Click the <span class="icon">Flow Exerciser</span> icon <img src="http://ot4i.github.io/ot4i.tutorials//dist/images/icons/iib/startFlowExerciser.png" alt> to start recording the message path through the flow.
+										
+										</li>
+									
+										<li> Click the <span class="icon">Send Message</span> icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png" alt> to select the first message to send to the flow.
+										
+										</li>
+									
+										<li> Select the 'Berks' input message, and click <span class="uicontrol">Send</span>.<br>The request message is sent to the HTTP Input node, and the response message containing the full name, 'Berkshire', is received.
+										
+										</li>
+									
+										<li> Close the Send message dialog. <br>The message path is automatically highlighted on the message flow. Note: The message path shows that the message was sent through the 'File Read' and 'LoadCache' Mapping nodes. Because the Lookup table was not in the Global Cache, the 'LookupCountyFullName' Mapping node cannot find a match.
+										
+										</li>
+									
+										<li> Click on any connection to see the data that passed through that connection.
+										
+										</li>
+									
+										<li> Click the <span class="icon">Send Message</span> icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png" alt> again, to select the 'Hants' message and send it to the flow by clicking <span class="uicontrol">Send</span>.
+										
+										</li>
+									
+										<li> Review the received message and close the Send message dialog to see the message path.<br>Note: The message path shows that the message was sent directly to the 'HTTP Reply' node. Because the Lookup table is in the Global Cache, the 'LookupCountyFullName' Mapping node found a match and set the 'CountyFullName'.
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+								<p> If you restart the integration node or integration server, or issue a <span class="cmdname">mqsicacheadmin</span> command to clear the Global Cache, the next message is sent through the 'File Read' and 'LoadCache' Mapping nodes again. (For example: <code>mqsicacheadmin --admin-host localhost --admin-port 7600 -c clearGrid -m CountyAbbrNames</code>) </p>
+								
+							
+								<p> <span class="uicontrol">The following optional steps help you explore and understand the application</span> </p>
+								
+							
+								<p> The <span class="msgflow">LookupCountyFullName</span> message flow uses an HTTP Input node to receive a JSON message that contains a 'CountyAbbr' value. The 'CountyAbbr' value is used in the 'LookupCountyFullName' Mapping node to lookup the replacement full county name from the Global Cache. </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> Double click the 'LookupCountyFullName' Mapping node to open the associated Graphical Data Map that includes the 'Cache Get' transform.
+										
+										</li>
+									
+										<li> Click the 'Local map' to enter the nested mapping. Note: The value for the input element, 'CountyAbbr', is placed in the 'Environment' so that it is not overwritten by the data that is retrieved from the <span class="filepath">'CountyAbbrNames.csv</span> file.
+										
+										</li>
+									
+										<li> Click the 'Cache Get' transform to enter the nested mapping for the transform and review the mapping of the 'Key' that is used to select the entry in the Lookup table. Note: 'MapName' is set by using a CustomXPath transform to configure a user-defined property.
+										
+										</li>
+									
+										<li> Click the up arrow <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/exitNestedMapping.png" alt> to exit the nested mapping, then click the 'Cache Return' transform to enter the nested mapping for the transform and review the mapping from the 'Value' that is returned from the Global Cache.
+										
+										</li>
+									
+										<li> Click the 'Move' transform and view the Condition tab in the Properties, to see that the 'Value' element is created only if an entry is found in the Global Cache.
+										
+										</li>
+									
+										<li> Return to the message flow editor.<br>The 'FoundCountyFullName' Route node checks for the presence of the 'CountyFullName' value:
+										
+										
+											
+											<ul>
+											
+												
+													<li> If the 'CountyFullName' value exists, the message is routed directly to the 'HTTP Reply' node.</li>
+												
+													<li> If the 'CountyFullName' value does not exist (for example, if the Lookup table in the Global Cache is not populated), the message is routed to the 'File Read' node. The 'File Read' node retrieves name-value pairs from a comma-separated-values file that is parsed by using a DFDL CSV model. The name-value data is passed to the 'LoadCache' Mapping node, where the data is loaded into a Lookup table in the Global Cache. The 'LoadCache' mapping node also sets the 'CountyFullName' value in the output message.</li>
+												
+											
+											</ul>
+											
+										
+										</li>
+									
+										<li> Double click the 'LoadCache' Mapping node to open and explore the map and review the use of the 'Cache Put' transform within the 'For each' transform. Note: The value of 'CountyFullName' for the current lookup request is taken directly from the data that is read from the comma-separated-values file.
+										
+										</li>
+									
+									
+									</ol>
+									
+								
+							
+						</div>
+						
+						<div class="row content-details"> 	
+							<h4>Find out more</h4>
+							<ul>
+							
+								
+								
+								<li> <a href="javascript:;" onclick="openExternalBrowser('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/rt26110_.htm')" title="Knowledge Center link to  Testing your message flow by using the Flow exerciser">Testing your message flow by using the Flow exerciser</a> </li>
+									
+							
+								
+								
+								<li> <a href="javascript:;" onclick="openExternalBrowser('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bn23783_.htm')" title="Knowledge Center link to  mqsicacheadmin command">mqsicacheadmin command</a> </li>
+									
+							
+							</ul>
+						</div>
+							
+					</div>
+					
+				</div>	
+			</div> <!-- tab-content -->
+		</div> <!-- columns -->
+	  </div> <!-- row --></body>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/jquery.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/foundation.min.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/main.js"></script>
+	</body>
+<!-- body::End -->
+
+</html>
