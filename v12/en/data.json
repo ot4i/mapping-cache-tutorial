@@ -32,8 +32,8 @@
 	{
         "_common": 
 		{
-            "name": "Using a Mapping node to graphically access a Lookup table that is stored in the Global Cache",
-            "shortDescription": "Learn how to use a Mapping node to graphically access a Lookup table that is stored in the Global Cache by exploring this simple example.",
+            "name": "Using a Mapping node to access a Lookup table that is stored in the Global Cache",
+            "shortDescription": "Learn how to use a Mapping node to access a Lookup table that is stored in the Global Cache by exploring this simple example.",
             "durationText": "This tutorial takes approximately",
             "durationTime": "6 minutes",
             "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
