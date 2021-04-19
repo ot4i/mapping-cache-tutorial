@@ -72,9 +72,6 @@
                 "sections": 
 				[
                     {
-                        "section": "Note: This tutorial requires the IBM App Connect Enterprise Toolkit Version 11.0.0.4 or later and an integration node or integration server that is running IBM App Connect Enterprise Version 11.0.0.4 or later."
-                    },
-                    {
                         "section": "This tutorial demonstrates how to graphically access the Global Cache in a Mapping node by using the Cache Get and Cache Put transforms."
                     },
                     {
@@ -133,7 +130,7 @@
                     "sections": 
                     [
                         {
-                            "section": "Click <span class='application'>Import</span> to import the application into your workspace. Note: You must have IBM App Connect Enterprise Toolkit Version 11.0.0.4 or later."
+                            "section": "Click <span class='application'>Import</span> to import the application into your workspace."
                         },
                         {
                             "section": "The <span class='application'>LookupTable_UsingMappingGlobalCache</span> application is now shown in the Application Development view of your workspace. The <span class='msgflow'>LookupCountyFullName</span> message flow is opened in the Message Flow editor."
@@ -233,7 +230,7 @@
                                  [
                                   { 
                                      "name":"Enable the default Global Cache",
-                                     "details":"Enable the embedded global cache by copying the GlobalCache entry in the <code>basic_1_catalog_1_container\\server.conf.yaml</code> found in the <code>ace-install-directory\\server\\sample\\globalcache</code> directory into your integration server server.conf.yaml file and following the instructions in this directory. Note: The integration node or server must be running IBM App Connect Enterprise Version 11.0.0.4 or later."
+                                     "details":"Enable the embedded global cache by copying the GlobalCache entry in the <code>basic_1_catalog_1_container\\server.conf.yaml</code> found in the <code>ace-install-directory\\server\\sample\\globalcache</code> directory into your integration server server.conf.yaml file and following the instructions in this directory."
                                   },
                                   { 
                                      "name":"Setup the location of the lookup table initialization data file",
